@@ -1,0 +1,10 @@
+> content thumnail:
+    - kalo covernya video, ga muncul cover (harusnya walaupun contentnya video, tetap munculin cover, misalkan ambil gamabr cideo di detik 00:01) 
+    - paginationnya: jika ada ada content lebih dari 5 langusng di pagination (harusnya max 8 content baru pagination)
+
+> upload content baru [fix 26/09/2026]:
+    {
+        "message": "Unexpected file field - media",
+        "error": "Bad Request",
+        "statusCode": 400
+    }

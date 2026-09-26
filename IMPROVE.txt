@@ -1,0 +1,11 @@
+> detail people:
+    - tambahkan jenis kelamin (default female)
+    - aktifitas (history hidup)
+    - pendidikan
+
+> Photo preview: ga bisa digeser cuma bisa di zoom
+    
+> General:
+    - website bisa copy-paste
+    - tambahwan switch 18+ (NFSW) [implement juga di edit page]
+    - support karakter korea
