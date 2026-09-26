@@ -1,0 +1,56 @@
+name: peoplefy
+
+services:
+  postgres-dev:
+    image: postgres:17-alpine
+    container_name: peoplefy-dev
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: peoplefy
+      POSTGRES_USER: peoplefy
+      POSTGRES_PASSWORD: peoplefy
+
+    ports:
+      - "6040:5432"
+
+    volumes:
+      - ./data/postgres-dev:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peoplefy -d peoplefy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - peoplefy-network
+
+  postgres-prod:
+    image: postgres:17-alpine
+    container_name: peoplefy-prod
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: peoplefy
+      POSTGRES_USER: peoplefy
+      POSTGRES_PASSWORD: peoplefy
+
+    ports:
+      - "6041:5432"
+
+    volumes:
+      - ./data/postgres-prod:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peoplefy -d peoplefy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - peoplefy-network
+
+networks:
+  peoplefy-network:
+    driver: bridge
